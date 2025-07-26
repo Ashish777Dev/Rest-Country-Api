@@ -1,0 +1,125 @@
+.country-details {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto 1fr;
+  gap: 80px;
+  margin: 10rem auto;
+  max-width: 1440px;
+}
+
+.top-section {
+  grid-column-start: span 2;
+}
+.top-section .back-to-home {
+  color: var(--text);
+  background-color: var(--element);
+  padding: 0.9rem 2.3rem;
+  width: max-content;
+
+  border-radius: 2px;
+  display: flex;
+  width: max-content;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+}
+
+.back-to-home .round-back-icon {
+  font-size: 4rem;
+}
+
+.image-section img {
+  display: block;
+  object-fit: contain;
+  width: 100%;
+  align-self: flex-start;
+  box-shadow: var(--shadow);
+}
+
+.show-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 30px;
+  color: var(--text);
+  padding: 0.8rem;
+}
+.show-details * li {
+  list-style: none;
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.country-detail-name {
+  grid-column-start: span 2;
+  font-weight: 700;
+}
+.border-country {
+  grid-column-start: span 2;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.border-country strong {
+  margin: 1.1rem 0;
+}
+.show-borders {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.border-country .border {
+  width: max-content;
+  padding: 0.9rem 1.5rem;
+  border-radius: 3px;
+  background-color: var(--element);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: var(--text);
+  justify-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1327px) {
+  .country-details {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, auto);
+  }
+  .top-section {
+    grid-column-start: auto;
+  }
+  .show-details {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, auto);
+  }
+  .border-country {
+    grid-column-start: span 2;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .image-section img {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 654px) {
+  .show-details {
+    display: flex;
+    flex-direction: column;
+  }
+}

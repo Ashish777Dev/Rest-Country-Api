@@ -1,0 +1,148 @@
+/* Parent Container */
+.search-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1310px;
+  width: 90%;
+  margin: 3.6rem auto;
+}
+/* Search box css */
+.search-box {
+  padding: 0 0.5rem;
+}
+
+.search-box input {
+  outline: none;
+  background-color: transparent;
+  border: none;
+}
+
+.search-box {
+  background-color: var(--element);
+  width: 50%;
+  min-width: 200px;
+  max-width: 350px;
+  height: 50px;
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding: 0.2rem 0.8rem;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.4rem 0.5rem;
+}
+
+.search-box input::placeholder,
+input {
+  color: var(--text);
+}
+
+.search-box .search-icon {
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text);
+  width: 30px;
+}
+
+/* Drop down style */
+.drop-down {
+  width: 200px;
+  max-width: 200px;
+  position: relative;
+  background-color: var(--element);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  border-radius: 4px;
+}
+
+.filter-btn {
+  background-color: var(--light-element);
+  color: var(--light-text);
+  width: 100%;
+  padding: 1.2rem 2.1rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  outline: none;
+  border: none;
+}
+
+.filter-btn .drop-icon {
+  font-size: 3rem;
+  font-weight: 300;
+}
+.option {
+  display: none;
+  font-size: 1.6rem;
+  position: absolute;
+  top: 110%;
+  z-index: 5;
+  width: 100%;
+  padding: 0.8rem 0.5rem;
+  background-color: var(--element);
+  box-shadow: var(--shadow);
+  color: var(--text);
+  border-radius: 5px;
+}
+
+.option .list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.8rem;
+  cursor: pointer;
+  transition: 0.3s ease-in-out background-color;
+}
+.option .list:hover {
+  background-color: var(--hover);
+}
+.show-option {
+  display: block;
+}
+
+@media screen and (max-width: 707px) {
+  html {
+    font-size: 50%;
+  }
+  .search-filter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .search-box {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 470px) {
+  html {
+    font-size: 45%;
+  }
+  .search-box .search-icon {
+    font-size: 2.2rem;
+  }
+  .drop-down {
+    font-size: 2.4rem;
+  }
+  .navbar {
+    font-size: 1.5rem;
+    height: 60px;
+  }
+  .country-details {
+    width: 95%;
+  }
+  .search-box {
+    height: auto;
+    padding: 1.1rem 1.1rem;
+  }
+}

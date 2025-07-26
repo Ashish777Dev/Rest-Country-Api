@@ -1,0 +1,55 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+
+# Build/Production
+/build
+/dist
+/dist-ssr
+/.next
+/out
+
+# Testing
+/coverage
+
+# Design files
+*.sketch
+*.fig
+*.xd
+
+# IDE/Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+*.swo
+
+# System files
+.DS_Store
+Thumbs.db
+*.pem
+
+
+# config
+vite.config.js
+eslint.config.js

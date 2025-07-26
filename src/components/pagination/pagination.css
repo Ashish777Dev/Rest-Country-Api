@@ -1,0 +1,69 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  max-width: max-content;
+  background-color: var(--element);
+  box-shadow: var(--shadow);
+  margin: 2.5rem 0;
+  height: 55px;
+  width: 400px;
+  padding: 0.5rem 0.9rem;
+  border-radius: 10px;
+
+  height: auto;
+}
+
+.pagination .page-btn-container {
+  display: flex;
+  gap: 2px;
+}
+
+.page-btn {
+  width: 35px;
+  height: 35px;
+  font-size: 1.4rem;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+
+  color: grey;
+}
+.active {
+  color: var(--element);
+  background-color: var(--text);
+  font-weight: bold;
+}
+
+.ellipses {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: grey;
+}
+
+.nav-btn {
+  width: 40px;
+  height: 50px;
+  font-size: 1.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.nav-btn:disabled {
+  color: grey;
+  display: none;
+}
