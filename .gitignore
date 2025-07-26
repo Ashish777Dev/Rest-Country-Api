@@ -50,6 +50,3 @@ Thumbs.db
 *.pem
 
 
-# config
-vite.config.js
-eslint.config.js
