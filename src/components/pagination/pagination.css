@@ -3,6 +3,9 @@
   justify-content: center;
   align-items: center;
   width: max-content;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   max-width: max-content;
   background-color: var(--element);
   box-shadow: var(--shadow);

@@ -30,13 +30,13 @@ Users should be able to:
 
 ### Screenshot
 
-![[A screenshot of the country app](./screenshot.jpg)
+![](./screenshot.jpg)
 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution](https://github.com/Ashish777Dev/Rest-Country-Api)
+- Live Site URL: [Live Site](https://where-in-world-io.netlify.app/)
 
 
 

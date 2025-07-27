@@ -7,6 +7,7 @@ import Pagination from "./components/pagination/Pagination";
 import SearchFilter from "./components/search-filter/SearchFilter";
 import { useContext } from "react";
 import { CountryContext } from "./country-context/CountryContext";
+import Footer from "./Footer";
 
 function App() {
   const { slicedData } = useContext(CountryContext);
@@ -24,6 +25,7 @@ function App() {
                 <SearchFilter />
                 <CountrySection />
                 {slicedData.length !== 0 ? <Pagination /> : null}
+                <Footer />
               </>
             }
           />
