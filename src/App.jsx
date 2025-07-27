@@ -1,5 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import CountrySection from "./components/CountrySection";
 import CountryDetails from "./components/country-details/CountryDetails";
@@ -10,29 +9,56 @@ import { CountryContext } from "./country-context/CountryContext";
 import Footer from "./Footer";
 
 function App() {
-  const { slicedData } = useContext(CountryContext);
-  return (
-    <BrowserRouter>
-      <div className="App">
+  const Layout = () => {
+    return (
+      <>
         <Navbar />
+        {/* Outlet render the content the matched child route */}
+        <Outlet />
+        <Footer />
+      </>
+    );
+  };
 
-        <Routes>
-          <Route path="/countries/:id" element={<CountryDetails />} />
-          <Route
-            path="/"
-            element={
-              <>
-                <SearchFilter />
-                <CountrySection />
-                {slicedData.length !== 0 ? <Pagination /> : null}
-                <Footer />
-              </>
-            }
-          />
-          <Route path="*" element={<h1>Page not Found! 404</h1>} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+  const HomeContent = () => {
+    const { slicedData } = useContext(CountryContext);
+
+    return (
+      <>
+        <SearchFilter />
+        <CountrySection />
+        {slicedData.length !== 0 ? <Pagination /> : null}
+      </>
+    );
+  };
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          index: true,
+          element: <HomeContent />,
+        },
+        {
+          // country details
+          path: "/countries/:id",
+          element: <CountryDetails />,
+        },
+        {
+          // page not found
+          path: "*",
+          element: <p>Page not found 404!</p>,
+        },
+      ],
+    },
+  ]);
+
+  return (
+    <div className="App">
+      <RouterProvider router={router} />
+    </div>
   );
 }
 

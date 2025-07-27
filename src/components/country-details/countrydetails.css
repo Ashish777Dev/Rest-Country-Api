@@ -3,9 +3,10 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: auto 1fr;
-  gap: 80px;
+  gap: 50px;
   margin: 10rem auto;
   max-width: 1440px;
+  position: relative;
 }
 
 .top-section {
@@ -14,10 +15,10 @@
 .top-section .back-to-home {
   color: var(--text);
   background-color: var(--element);
-  padding: 0.9rem 2.3rem;
+  padding: 0.4rem 2.3rem;
   width: max-content;
 
-  border-radius: 2px;
+  border-radius: 5px;
   display: flex;
   width: max-content;
   justify-content: center;
@@ -36,6 +37,7 @@
   width: 100%;
   align-self: flex-start;
   box-shadow: var(--shadow);
+  border-radius: 3px;
 }
 
 .show-details {
@@ -45,6 +47,8 @@
   gap: 30px;
   color: var(--text);
   padding: 0.8rem;
+  justify-content: center;
+  align-items: center;
 }
 .show-details * li {
   list-style: none;
@@ -96,6 +100,7 @@
   .country-details {
     grid-template-columns: auto;
     grid-template-rows: repeat(3, auto);
+    gap: 20px;
   }
   .top-section {
     grid-column-start: auto;
@@ -103,6 +108,9 @@
   .show-details {
     grid-template-columns: auto;
     grid-template-rows: repeat(2, auto);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
   .border-country {
     grid-column-start: span 2;

@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigation } from "react-router-dom";
 import { CountryContext } from "../../country-context/CountryContext";
 import Loader from "../loader/Loader";
 import TopSection from "./TopSection";
@@ -10,12 +10,20 @@ import "./countrydetails.css";
 const CountryDetails = () => {
   const { countries } = useContext(CountryContext);
   const { id } = useParams();
+
   const findCountry = countries.find((country) => {
     let countryID = JSON.stringify(country.name.common);
     return countryID === id;
   });
 
   const [countryDetails, setCountryDetails] = useState(null);
+
+  const navigation = useNavigation();
+
+  const isNavigating = navigation.state === "loading";
+
+  const showLoader = countryDetails === null || isNavigating;
+
   useEffect(() => {
     //if country find the specified ID then setCountryDetails to findCountry else set to []
     // findCountry ? setCountryDetails(findCountry) : setCountryDetails([]);
@@ -49,19 +57,24 @@ const CountryDetails = () => {
   const native = nativeLanguage[0].language.toUpperCase();
   const currencies = countryCurrencies[0].currencies;
   const languages = countryLanguages.toLocaleString();
-  console.log(languages)
-  
+
   return (
     <div className="country-details">
-      <TopSection />
-      <LeftSection countryDetails={countryDetails} />
-      <ShowDetails
-        nativeLanguage={native}
-        countryDetails={countryDetails}
-        countryCurrencies={currencies}
-        countries={countries}
-        languages={languages}
-      />
+      {showLoader ? (
+        <Loader />
+      ) : (
+        <>
+          <TopSection />
+          <LeftSection countryDetails={countryDetails} />
+          <ShowDetails
+            nativeLanguage={native}
+            countryDetails={countryDetails}
+            countryCurrencies={currencies}
+            countries={countries}
+            languages={languages}
+          />
+        </>
+      )}
     </div>
   );
 };
